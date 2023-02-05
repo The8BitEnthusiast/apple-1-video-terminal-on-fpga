@@ -26,6 +26,13 @@ module video_terminal_tb(
     
     reg clk;
     reg mr_n;
+    reg rd[6:1], ci[6:1], cb[6:1], co[6:1];
+    reg da;
+    reg clr_btn;
+
+    wire rda_n;
+    wire da_out, ack, cr_decode0, ctrl_char, clr_fsm1, clr_fsm1_n;
+    wire clr_fsm2, cr_decode, last2, last_h2, clr_fsm_or_btn, c8b_out;
     
     wire char_rate, dot_rate;
     wire h10, last_h, last_h_n;
@@ -36,17 +43,84 @@ module video_terminal_tb(
 
     wire d8_tc, vinh_n, vbl_n, vbl, v_rst_n, last;
     wire [7:0] v;
-    wire wc1_n;
-    wire line_phi;
+    wire wc1_n, wc2_n, write_n, clr;
+    wire line_phi, mem_phi;
     wire pix_ld_n;
 
+    wire v3_nor_v4, v_cr, vid1_in, vid1;
+
+    wire line_7;
+
+    wire cursi, curso, curs2, curs_tgl_in, curs_tgl;
+
     ic_74175 c13 (.cp(clk),
-                 .d({1'b0, 1'b0, 1'b0, dot_rate}),
+                 .d({curso, curs2, vid1_in, dot_rate}),
                  .q(),
                  .q_n(),
                  .mr_n(mr_n) );
 
     assign dot_rate = c13.q_n[0];
+    assign vid1 = c13.q_n[1];
+    assign curs = c13.q_n[3];
+
+    ic_555 timer0 ( .clk(clk), .out(curs_tgl_in) );
+
+    and c12a (curs_tgl, curs_tgl_in, curs2);
+    nor c10a (cb6_tgl, curs_tgl, cb[6]);
+
+    ic_74157 c14 ( .i0a(rd[5]), 
+                   .i1a(ci[5]), 
+                   .za(cb[5]), 
+                   .i0b(), 
+                   .i1b(), 
+                   .zb(), 
+                   .i0c(rd[7]), 
+                   .i1c(ci[6]),
+                   .zc(cb[6]), 
+                   .i0d(1'b0), 
+                   .i1d(curs), 
+                   .zd(curs2), 
+                   .e_n(clr), 
+                   .s(write_n) );
+
+    ic_74157 c4  ( .i0a(rd[1]), 
+                   .i1a(ci[1]), 
+                   .za(cb[1]), 
+                   .i0b(rd[2]), 
+                   .i1b(ci[2]), 
+                   .zb(cb[2]), 
+                   .i0c(rd[3]), 
+                   .i1c(ci[3]),
+                   .zc(cb[3]), 
+                   .i0d(rd[4]), 
+                   .i1d(ci[4]), 
+                   .zd(cb[4]), 
+                   .e_n(clr), 
+                   .s(write_n) );
+
+    ic_2504 d5a ( .clk(mem_phi), .si(cb[1]), .so(ci[1]) );
+    ic_2504 d5b ( .clk(mem_phi), .si(cb[2]), .so(ci[2]) );
+    ic_2504 d4a ( .clk(mem_phi), .si(cb[3]), .so(ci[3]) );
+    ic_2504 d4b ( .clk(mem_phi), .si(cb[4]), .so(ci[4]) );
+    ic_2504 d14a ( .clk(mem_phi), .si(cb[5]), .so(ci[5]) );
+    ic_2504 d14b ( .clk(mem_phi), .si(cb[6]), .so(ci[6]) );
+
+    ic_74174 c7 ( .clk(mem_phi), 
+                  .d({wc1_n, last_h, clr_fsm1, ack, da, last}), 
+                  .q({wc2_n, last_h2, clr_fsm2, rda_n, da_out, last2}), 
+                  .mr_n(mr_n) );
+
+    nand_3 c6b ( ack, curs, da_out, da_out );
+    nor_3 c5b ( ctrl_char, ack, rd[6], rd[7] );
+    or c9d ( write_n, ack, ctrl_char );
+    nand_3 c6c ( cr_decode0, rd[1], rd[3], rd[4] );
+    nor_3 c5c ( cr_decode, cr_decode0, rd[2], rd[5] );
+    and_or_invert c8a (clr_fsm1_n, ctrl_char, cr_decode, wc2_n, clr_fsm2 );
+    not d12a (clr_fsm1, clr_fsm1_n);
+    or_3 (clr, vbl, clr_btn, clr_fsm1 );
+    or (clr_fsm_or_btn, clr_fsm1, clr_btn );
+    and_or_invert c8b (c8b_out, clr_fsm1, last_h2, clr_fsm_or_btn, last2 );
+    and c12b (wc1_n, c8b_out, write_n);
 
     ic_74161 d11 ( .pe_n (char_rate),
                   .p (4'b1010),
@@ -107,12 +181,35 @@ module video_terminal_tb(
 
     nand d10b (line_phi, d11.q[2], hbl_n);
     nand d10a (pix_ld_n, d11.tc, hbl_n);
+
+    nand_3 b2a (line_7, v[0], v[1], v[2]);
+    nor_3 c5a (mem_phi, h3_vbl, line_7, line_phi);
+
+    ic_74161 d15 ( .pe_n (v_cr),
+                  .p (4'b1010),
+                  .q (),
+                  .cet (last_h),
+                  .cep (last_h),
+                  .cp (char_rate),
+                  .tc (),
+                  .mr_n (mr_n) );
+    
+    assign vinh = d15.q[1]; 
+    
+    and_3 (v_cr, v[5], vbl, v3_nor_v4);
+    nor c10d (v3_nor_v4, v[3], v[4]);
+    nand c15c (vid1_in, h_sync_n, d15.q[3]);
+
+    ic_2504 c11b ( .clk(mem_phi), .si(cursi), .so(curso) );
+
+    and c12c(cursi, wc2_n, c13.q_n[2]);
      
     always #35 clk = ~clk;
      
     initial begin
         clk <= 0;
         mr_n <= 0;
+        clr_btn <= 0;
         
         #70 mr_n <= 1;
         

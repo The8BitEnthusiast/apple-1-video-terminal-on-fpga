@@ -16,6 +16,8 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
+// Instantiation:
+//    ic_74174 u0 ( .clk(), .d(), .q(), .mr_n() );
 // 
 //////////////////////////////////////////////////////////////////////////////////
 

@@ -16,6 +16,9 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
+// Instantiation:
+//    ic_74157( .i0a(), .i1a(), .za(), .i0b(), .i1b(), .zb(), .i0c(), .i1c(),
+//              .zc(), .i0d(), .i1d(), .zd(), .e_n(), .s() );
 // 
 //////////////////////////////////////////////////////////////////////////////////
 

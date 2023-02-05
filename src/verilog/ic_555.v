@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 05/03/2022 05:14:17 PM
+// Create Date: 01/26/2023 12:40:10 PM
 // Design Name: 
-// Module Name: ic_2504
+// Module Name: blinky
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -16,26 +16,21 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// Instantation: ic_2504 u0 ( .clk(), .si(), .so() );
+// Instantiation:
+//     ic_555 timer0 ( .clk(), .out() );
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ic_2504(
+module ic_555(
     input clk,
-    input si,
-    output so
+    output out
     );
     
-    reg [1023:0] tmp;
+    reg [23:0] count = 0;
     
-    always @(posedge clk)
-    begin
-        tmp = tmp << 1;
-        
-        tmp[0] = si;
-    end
+    assign out = count[23];
     
-    assign so = tmp[1023];
+    always @ (posedge(clk)) count <= count + 1;
     
 endmodule

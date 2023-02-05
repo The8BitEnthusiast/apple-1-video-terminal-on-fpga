@@ -3,39 +3,27 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 05/03/2022 05:14:17 PM
+// Create Date: 03/21/2022 09:35:45 AM
 // Design Name: 
-// Module Name: ic_2504
+// Module Name: ic_7450
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: AND-OR-INVERT logic gate 
 // 
 // Dependencies: 
 // 
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// Instantation: ic_2504 u0 ( .clk(), .si(), .so() );
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ic_2504(
-    input clk,
-    input si,
-    output so
-    );
+module and_or_invert(
+    output y,
+    input a,b,c,d);
     
-    reg [1023:0] tmp;
-    
-    always @(posedge clk)
-    begin
-        tmp = tmp << 1;
-        
-        tmp[0] = si;
-    end
-    
-    assign so = tmp[1023];
+    assign y = ~ ((a & b) | (c & d));
     
 endmodule
