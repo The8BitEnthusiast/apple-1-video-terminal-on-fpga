@@ -1,0 +1,291 @@
+/*
+
+Xilinx Vivado v2022.2 (64-bit) [Major: 2022, Minor: 2]
+SW Build: 3671981 on Fri Oct 14 04:59:54 MDT 2022
+IP Build: 3669848 on Fri Oct 14 08:30:02 MDT 2022
+
+Process ID (PID): 32404
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Sun Feb 05 12:40:47 EST 2023
+Time zone: 	Eastern Standard Time (America/Toronto)
+
+OS: Ubuntu
+OS Version: 5.15.0-58-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: 0
+Screen size: 1440x900
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	/home/steeve/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9
+Java executable: 	/home/steeve/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m, -Xrs]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	steeve
+User home directory: /home/steeve
+User working directory: /home/steeve/projects/apple-1-video-terminal-on-fpga/src/testbenches
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/steeve/Xilinx/Vivado
+HDI_APPROOT: /home/steeve/Xilinx/Vivado/2022.2
+RDI_DATADIR: /home/steeve/Xilinx/Vivado/2022.2/data
+RDI_BINDIR: /home/steeve/Xilinx/Vivado/2022.2/bin
+
+Vivado preferences file: /home/steeve/.Xilinx/Vivado/2022.2/vivado.xml
+Vivado preferences directory: /home/steeve/.Xilinx/Vivado/2022.2/
+Vivado layouts directory: /home/steeve/.Xilinx/Vivado/2022.2/data/layouts
+PlanAhead jar file: 	/home/steeve/Xilinx/Vivado/2022.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/steeve/projects/apple-1-video-terminal-on-fpga/src/testbenches/vivado.log
+Vivado journal file: 	/home/steeve/projects/apple-1-video-terminal-on-fpga/src/testbenches/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-32404-spock
+
+Xilinx Environment Variables
+----------------------------
+RDI_APPROOT: /home/steeve/Xilinx/Vivado/2022.2
+RDI_BASEROOT: /home/steeve/Xilinx/Vivado
+RDI_BINROOT: /home/steeve/Xilinx/Vivado/2022.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /home/steeve/Xilinx/Vivado/2022.2/data
+RDI_INSTALLROOT: /home/steeve/Xilinx
+RDI_INSTALLVER: 2022.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 11.0.11_9
+RDI_LIBDIR: /home/steeve/Xilinx/Vivado/2022.2/lib/lnx64.o/Ubuntu:/home/steeve/Xilinx/Vivado/2022.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /home/steeve/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /home/steeve/Xilinx/Vivado/2022.2/bin/unwrapped/lnx64.o/vivado
+RDI_TPS_ROOT: /home/steeve/Xilinx/Vivado/2022.2/tps/lnx64
+RDI_USE_JDK11: True
+XILINX: /home/steeve/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_DSP: /home/steeve/Xilinx/Vivado/2022.2/ids_lite/ISE
+XILINX_HLS: /home/steeve/Xilinx/Vitis_HLS/2022.2
+XILINX_PLANAHEAD: /home/steeve/Xilinx/Vivado/2022.2
+XILINX_VITIS: 
+XILINX_VIVADO: /home/steeve/Xilinx/Vivado/2022.2
+XILINX_VIVADO_HLS: /home/steeve/Xilinx/Vivado/2022.2
+
+
+GUI allocated memory:	1,080 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,770 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 940 MB. GUI used memory: 54 MB. Current time: 2/5/23, 12:40:48 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  1004 ms.
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // u
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceOtoP.ProjectNameChooser_CHOOSE_PROJECT_LOCATION, (String) null); // r
+setFolderChooser("/home/steeve/projects");
+// Elapsed time: 11 seconds
+setText(PAResourceOtoP.ProjectNameChooser_PROJECT_NAME, "test_ip"); // Q
+selectButton("NEXT", "Next >"); // JButton
+// [GUI Memory]: 81 MB (+82706kb) [00:01:01]
+// [Engine Memory]: 1,017 MB (+914688kb) [00:01:01]
+// Elapsed time: 11 seconds
+selectButton("NEXT", "Next >"); // JButton
+// WARNING: HEventQueue.dispatchEvent() is taking  1005 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1004 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1009 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1002 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1004 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 88 seconds
+setText("PAResourceEtoH.FPGAChooser_FPGA_TABLE_SEARCH_FIELD", "XC7A35TFTG256-1"); // OverlayTextField
+selectTable(PAResourceEtoH.FPGAChooser_FPGA_TABLE, "xc7a35tftg256-1 ; 256 ; 170 ; 20800 ; 41600 ; 50 ; 0 ; 90 ;  ; 32 ;  ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0 ;  ;  ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 0, "xc7a35tftg256-1", 0); // n
+selectButton("NEXT", "Next >"); // JButton
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,071 MB (+3313kb) [00:02:46]
+// [GUI Memory]: 113 MB (+29133kb) [00:02:47]
+// WARNING: HEventQueue.dispatchEvent() is taking  2840 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project test_ip /home/steeve/projects/test_ip -part xc7a35tftg256-1 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/steeve/Xilinx/Vivado/2022.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 6358.668 ; gain = 58.586 ; free physical = 225 ; free virtual = 8394 
+// Elapsed time: 13 seconds
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 145 seconds
+dismissDialog("Create Project"); // bq
+dismissDialog("New Project"); // f
+// [GUI Memory]: 121 MB (+2419kb) [00:02:53]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, IP Catalog]", 4, false); // f
+// Run Command: PAResourceCommand.PACommandNames_CORE_GEN
+dismissDialog("Open IP Catalog"); // bq
+// [Engine Memory]: 1,130 MB (+5551kb) [00:03:05]
+// Elapsed time: 17 seconds
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "clock"); // OverlayTextField
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:6.0", 16, "Clocking Wizard", 0, false); // z
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:6.0", 16, "Clocking Wizard", 0, false); // z
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:6.0", 16); // z
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "Clocking Wizard ; AXI4 ; Production ; Included ; xilinx.com:ip:clk_wiz:6.0", 16, "Clocking Wizard", 0, false, false, false, false, false, true); // z - Double Click
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2696 ms.
+// Elapsed time: 11 seconds
+dismissDialog("Customize IP"); // i
+// [Engine Memory]: 1,276 MB (+94429kb) [00:03:36]
+// Elapsed time: 35 seconds
+setText("Component Name", "clk_gen"); // v
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2576 ms.
+selectCheckBox((HResource) null, "Phase Duty Cycle Config", true); // f: TRUE
+selectCheckBox((HResource) null, "Phase Duty Cycle Config", true); // f: TRUE
+// Elapsed time: 15 seconds
+setText("PRIM IN FREQ", "50.000"); // v
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2609 ms.
+// Elapsed time: 17 seconds
+setText("PRIMARY PORT", "clk_in"); // v
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2567 ms.
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Output Clocks", 1); // cH
+setText("CLK OUT1 PORT", "clk_out"); // v
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2497 ms.
+// Elapsed time: 28 seconds
+setText("CLKOUT1 REQUESTED OUT FREQ", "14.31818"); // v
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  2867 ms.
+// Elapsed time: 25 seconds
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Port Renaming", 2); // cH
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Output Clocks", 1); // cH
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Clocking Options", 0); // cH
+selectTab(PAResourceTtoZ.XPG_TabbedPane_TABBED_PANE, (HResource) null, "Summary", 4); // cH
+// Elapsed time: 20 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Customize IP"); // m
+// TclEventType: CREATE_IP_CORE
+// Tcl Message: create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_gen 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [GUI Memory]: 144 MB (+17604kb) [00:06:28]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: set_property -dict [list \   CONFIG.CLKIN1_JITTER_PS {200.0} \   CONFIG.CLKOUT1_JITTER {355.651} \   CONFIG.CLKOUT1_PHASE_ERROR {237.634} \   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {14.31818} \   CONFIG.CLK_OUT1_PORT {clk_out} \   CONFIG.Component_Name {clk_gen} \   CONFIG.MMCM_CLKFBOUT_MULT_F {39.375} \   CONFIG.MMCM_CLKIN1_PERIOD {20.000} \   CONFIG.MMCM_CLKIN2_PERIOD {10.0} \   CONFIG.MMCM_CLKOUT0_DIVIDE_F {68.750} \   CONFIG.MMCM_DIVCLK_DIVIDE {2} \   CONFIG.PRIMARY_PORT {clk_in} \   CONFIG.PRIM_IN_FREQ {50.000} \ ] [get_ips clk_gen] 
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target {instantiation_template} [get_files /home/steeve/projects/test_ip/test_ip.srcs/sources_1/ip/clk_gen/clk_gen.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_gen'... 
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Customize IP"); // bq
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+selectTree(PAResourceQtoS.SimpleOutputProductDialog_OUTPUT_PRODUCT_TREE, "[root, clk_gen.xci]", 1, false); // V.c
+// Elapsed time: 22 seconds
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a
+// Tcl Message: generate_target all [get_files  /home/steeve/projects/test_ip/test_ip.srcs/sources_1/ip/clk_gen/clk_gen.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_gen'... 
+// [Engine Memory]: 1,342 MB (+1957kb) [00:07:04]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_gen'... INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_gen'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_gen'... 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all clk_gen] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: clk_gen 
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/steeve/projects/test_ip/test_ip.srcs/sources_1/ip/clk_gen/clk_gen.xci] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// [GUI Memory]: 159 MB (+7935kb) [00:07:05]
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/steeve/projects/test_ip/test_ip.srcs/sources_1/ip/clk_gen/clk_gen.xci] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs clk_gen_synth_1 -jobs 2 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: clk_gen 
+// Tcl Message: [Sun Feb  5 12:47:40 2023] Launched clk_gen_synth_1... Run output will be captured here: /home/steeve/projects/test_ip/test_ip.runs/clk_gen_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 14 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// Elapsed time: 19 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 43 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // D
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 20 seconds
+floatFrame(PAResourceOtoP.PAViews_TCL_CONSOLE, "Tcl Console"); // R
+// PAResourceOtoP.PAViews_TCL_CONSOLE: Tcl Console: float view
+// Elapsed time: 53 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 272, 347); // cD
+// HMemoryUtils.trashcanNow. Engine heap size: 1,394 MB. GUI used memory: 81 MB. Current time: 2/5/23, 1:10:49 PM EST
+// WARNING: HEventQueue.dispatchEvent() is taking  10097 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  8040 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10031 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10009 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10135 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10003 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2845 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  9999 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10011 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10024 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  10037 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,394 MB. GUI used memory: 71 MB. Current time: 2/5/23, 1:40:53 PM EST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,394 MB. GUI used memory: 71 MB. Current time: 2/5/23, 2:10:54 PM EST
