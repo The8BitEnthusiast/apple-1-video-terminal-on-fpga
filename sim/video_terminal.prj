@@ -1,0 +1,22 @@
+verilog work ../src/verilog/and_3.v
+verilog work ../src/verilog/ic_2504.v
+verilog work ../src/verilog/ic_2519.v
+verilog work ../src/verilog/ic_7400.v
+verilog work ../src/verilog/ic_7404.v
+verilog work ../src/verilog/ic_74160.v
+verilog work ../src/verilog/ic_74166.v
+verilog work ../src/verilog/ic_74173.v
+verilog work ../src/verilog/ic_74175.v
+verilog work ../src/verilog/nand_3.v
+verilog work ../src/verilog/or_3.v
+verilog work ../src/verilog/and_or_invert.v 
+verilog work ../src/verilog/ic_2513.v
+verilog work ../src/verilog/ic_555.v
+verilog work ../src/verilog/ic_7402.v
+verilog work ../src/verilog/ic_74157.v
+verilog work ../src/verilog/ic_74161.v
+verilog work ../src/verilog/ic_74174.v
+verilog work ../src/verilog/ic_7427.v
+verilog work ../src/verilog/nor_3.v 
+
+verilog work ../src/testbenches/video_terminal_tb.v

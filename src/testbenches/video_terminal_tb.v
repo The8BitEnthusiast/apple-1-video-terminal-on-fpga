@@ -26,10 +26,11 @@ module video_terminal_tb(
     
     reg clk;
     reg mr_n;
-    reg rd[6:1], ci[6:1], cb[6:1], co[6:1];
+    reg rd[7:1];
     reg da;
     reg clr_btn;
 
+    wire ci[6:1], cb[6:1], co[6:1], cg[5:1];
     wire rda_n;
     wire da_out, ack, cr_decode0, ctrl_char, clr_fsm1, clr_fsm1_n;
     wire clr_fsm2, cr_decode, last2, last_h2, clr_fsm_or_btn, c8b_out;
@@ -47,7 +48,7 @@ module video_terminal_tb(
     wire line_phi, mem_phi;
     wire pix_ld_n;
 
-    wire v3_nor_v4, v_cr, vid1_in, vid1;
+    wire v3_nor_v4, v_cr, vid1_in, vid1, vid2;
 
     wire line_7;
 
@@ -83,6 +84,13 @@ module video_terminal_tb(
                    .e_n(clr), 
                    .s(write_n) );
 
+    ic_2519 c3 ( .clk(line_phi), .rc(line_7), 
+                 .in({cb6_tgl, cb[5], cb[4], cb[3], cb[2], cb[1]}), 
+                 .out({co[6], co[5], co[4], co[3], co[2], co[1]}));
+    ic_2513 d2 ( .x({cg[5],cg[4],cg[3],cg[2],cg[1]}), 
+                 .a({co[6], co[5], co[4], co[3], co[2], co[1], v[2:0]}) );
+    ic_74166 d1 ( .clk(dot_rate), .ser_in(1'b0), .p({cg[5], cg[4], cg[3], cg[2], cg[1], 1'b0, 1'b0, 1'b0}), .load_n(), .clr_n(), .qh(vid2) );
+
     ic_74157 c4  ( .i0a(rd[1]), 
                    .i1a(ci[1]), 
                    .za(cb[1]), 
@@ -117,7 +125,7 @@ module video_terminal_tb(
     nor_3 c5c ( cr_decode, cr_decode0, rd[2], rd[5] );
     and_or_invert c8a (clr_fsm1_n, ctrl_char, cr_decode, wc2_n, clr_fsm2 );
     not d12a (clr_fsm1, clr_fsm1_n);
-    or_3 (clr, vbl, clr_btn, clr_fsm1 );
+    or_3 or3clr (clr, vbl, clr_btn, clr_fsm1 );
     or (clr_fsm_or_btn, clr_fsm1, clr_btn );
     and_or_invert c8b (c8b_out, clr_fsm1, last_h2, clr_fsm_or_btn, last2 );
     and c12b (wc1_n, c8b_out, write_n);
@@ -194,9 +202,9 @@ module video_terminal_tb(
                   .tc (),
                   .mr_n (mr_n) );
     
-    assign vinh = d15.q[1]; 
+    assign vinh_n = d15.q[1]; 
     
-    and_3 (v_cr, v[5], vbl, v3_nor_v4);
+    and_3 and3v_cr (v_cr, v[5], vbl, v3_nor_v4);
     nor c10d (v3_nor_v4, v[3], v[4]);
     nand c15c (vid1_in, h_sync_n, d15.q[3]);
 
@@ -205,15 +213,26 @@ module video_terminal_tb(
     and c12c(cursi, wc2_n, c13.q_n[2]);
      
     always #35 clk = ~clk;
+    always @ (negedge rda_n)
+    begin
+        #10000 da <= 0;
+    end
      
     initial begin
         clk <= 0;
         mr_n <= 0;
+        rd[7] <= 0; rd[6] <= 0; rd[5] <= 0; rd[4] <= 0; rd[3] <= 0; rd[2] <= 0; rd[1] <= 0;
+        da <= 0;
         clr_btn <= 0;
         
         #70 mr_n <= 1;
+        #5 clr_btn <= 1;
+        #25000000 clr_btn <= 0;
+        #2000000  rd[7] <= 1; rd[6] <= 0; rd[5] <= 0; rd[4] <= 0; rd[3] <= 0; rd[2] <= 0; rd[1] <= 1;
+        #100 da<=1;
+
         
-        #250000 $finish;
+        #100000000 $finish;
     end
     
 endmodule

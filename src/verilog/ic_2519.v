@@ -16,6 +16,8 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
+// Instantiation:
+//   ic_2519 u0 ( .clk(), .rc(), .in(), .out());
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -31,30 +33,14 @@ module ic_2519(
     
     always @(posedge clk)
     begin
-        tmp0 = tmp0 << 1;
-        tmp1 = tmp1 << 1;
-        tmp2 = tmp2 << 1;
-        tmp3 = tmp3 << 1;
-        tmp4 = tmp4 << 1;
-        tmp5 = tmp5 << 1;
-        if (rc == 1) begin
-            tmp0[0] = in[0];
-            tmp1[0] = in[1];
-            tmp2[0] = in[2];
-            tmp3[0] = in[3];
-            tmp4[0] = in[4];
-            tmp5[0] = in[5];
-        end
-        else begin
-            tmp0[0] = out[0];
-            tmp1[0] = out[1];
-            tmp2[0] = out[2];
-            tmp3[0] = out[3];
-            tmp4[0] = out[4];
-            tmp5[0] = out[5];
-        end
+        tmp0 <= {tmp0[38:0], rc ? out[0] : in[0]};
+        tmp1 <= {tmp1[38:0], rc ? out[1] : in[1]};
+        tmp2 <= {tmp2[38:0], rc ? out[2] : in[2]};
+        tmp3 <= {tmp3[38:0], rc ? out[3] : in[3]};
+        tmp4 <= {tmp4[38:0], rc ? out[4] : in[4]};
+        tmp5 <= {tmp5[38:0], rc ? out[5] : in[5]};
     end
-    
+           
     assign out[0] = tmp0[39];
     assign out[1] = tmp1[39];
     assign out[2] = tmp2[39];

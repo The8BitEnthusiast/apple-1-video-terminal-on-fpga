@@ -31,9 +31,7 @@ module ic_2504(
     
     always @(posedge clk)
     begin
-        tmp = tmp << 1;
-        
-        tmp[0] = si;
+        tmp <= {tmp[1022:0], si};
     end
     
     assign so = tmp[1023];
