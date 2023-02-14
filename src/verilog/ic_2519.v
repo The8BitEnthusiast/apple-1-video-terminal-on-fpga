@@ -47,5 +47,14 @@ module ic_2519(
     assign out[3] = tmp3[39];
     assign out[4] = tmp4[39];
     assign out[5] = tmp5[39];
+
+    initial begin
+        tmp0 <= 0;
+        tmp1 <= 0;
+        tmp2 <= 0;
+        tmp3 <= 0;
+        tmp4 <= 0;
+        tmp5 <= 0;
+    end;
     
 endmodule

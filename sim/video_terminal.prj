@@ -18,5 +18,10 @@ verilog work ../src/verilog/ic_74161.v
 verilog work ../src/verilog/ic_74174.v
 verilog work ../src/verilog/ic_7427.v
 verilog work ../src/verilog/nor_3.v 
+verilog work ../src/verilog/video_terminal.v
+
+verilog work ../ip/clk_gen/clk_gen.v
+verilog work ../ip/clk_gen/clk_gen_clk_wiz.v
+verilog work ./glbl.v
 
 verilog work ../src/testbenches/video_terminal_tb.v

@@ -35,5 +35,9 @@ module ic_2504(
     end
     
     assign so = tmp[1023];
+
+    initial begin
+        tmp <= 0;
+    end
     
 endmodule

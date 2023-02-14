@@ -10,139 +10,140 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="66.985075000 ms"></ZoomStartTime>
-      <ZoomEndTime time="70.575883517 ms"></ZoomEndTime>
-      <Cursor1Time time="67.320575000 ms"></Cursor1Time>
+      <ZoomStartTime time="67,445,735.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="67,448,475.001 ns"></ZoomEndTime>
+      <Cursor1Time time="67,448,395.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="80"></NameColumnWidth>
+      <NameColumnWidth column_width="108"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="30" />
-   <wvobject type="logic" fp_name="/video_terminal_tb/char_rate">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/char_rate">
       <obj_property name="ElementShortName">char_rate</obj_property>
       <obj_property name="ObjectShortName">char_rate</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/dot_rate">
-      <obj_property name="ElementShortName">dot_rate</obj_property>
-      <obj_property name="ObjectShortName">dot_rate</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/hbl_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/hbl_n">
       <obj_property name="ElementShortName">hbl_n</obj_property>
       <obj_property name="ObjectShortName">hbl_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/h_sync_n">
-      <obj_property name="ElementShortName">h_sync_n</obj_property>
-      <obj_property name="ObjectShortName">h_sync_n</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/units">
-      <obj_property name="ElementShortName">units[3:0]</obj_property>
-      <obj_property name="ObjectShortName">units[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/tens">
-      <obj_property name="ElementShortName">tens[3:0]</obj_property>
-      <obj_property name="ObjectShortName">tens[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/vinh_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/vinh_n">
       <obj_property name="ElementShortName">vinh_n</obj_property>
       <obj_property name="ObjectShortName">vinh_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/vbl_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/vbl_n">
       <obj_property name="ElementShortName">vbl_n</obj_property>
       <obj_property name="ObjectShortName">vbl_n</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/v">
-      <obj_property name="ElementShortName">v[7:0]</obj_property>
-      <obj_property name="ObjectShortName">v[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/line_phi">
-      <obj_property name="ElementShortName">line_phi</obj_property>
-      <obj_property name="ObjectShortName">line_phi</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/mem_phi">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/mem_phi">
       <obj_property name="ElementShortName">mem_phi</obj_property>
       <obj_property name="ObjectShortName">mem_phi</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/pix_ld_n">
-      <obj_property name="ElementShortName">pix_ld_n</obj_property>
-      <obj_property name="ObjectShortName">pix_ld_n</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/line_7">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/line_7">
       <obj_property name="ElementShortName">line_7</obj_property>
       <obj_property name="ObjectShortName">line_7</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/d15/q">
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/d15/q">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">q[3:0]</obj_property>
       <obj_property name="ObjectShortName">q[3:0]</obj_property>
       <obj_property name="label">d15/q[3:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/d15/pe_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/d15/pe_n">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">pe_n</obj_property>
       <obj_property name="ObjectShortName">pe_n</obj_property>
       <obj_property name="label">d15/pe_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/vid1">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/vid1">
       <obj_property name="ElementShortName">vid1</obj_property>
       <obj_property name="ObjectShortName">vid1</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/vid2">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/vid2">
       <obj_property name="ElementShortName">vid2</obj_property>
       <obj_property name="ObjectShortName">vid2</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/wc1_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/wc1_n">
       <obj_property name="ElementShortName">wc1_n</obj_property>
       <obj_property name="ObjectShortName">wc1_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/wc2_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/wc2_n">
       <obj_property name="ElementShortName">wc2_n</obj_property>
       <obj_property name="ObjectShortName">wc2_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/clr_btn">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/clr_btn">
       <obj_property name="ElementShortName">clr_btn</obj_property>
       <obj_property name="ObjectShortName">clr_btn</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/last">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/last">
       <obj_property name="ElementShortName">last</obj_property>
       <obj_property name="ObjectShortName">last</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/last_h">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/last_h">
       <obj_property name="ElementShortName">last_h</obj_property>
       <obj_property name="ObjectShortName">last_h</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/rd">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/h_sync_n">
+      <obj_property name="ElementShortName">h_sync_n</obj_property>
+      <obj_property name="ObjectShortName">h_sync_n</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/rd">
       <obj_property name="ElementShortName">rd[7:1]</obj_property>
       <obj_property name="ObjectShortName">rd[7:1]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/da">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/da">
       <obj_property name="ElementShortName">da</obj_property>
       <obj_property name="ObjectShortName">da</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/rda_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/rda_n">
       <obj_property name="ElementShortName">rda_n</obj_property>
       <obj_property name="ObjectShortName">rda_n</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/d2/x">
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/units">
+      <obj_property name="ElementShortName">units[3:0]</obj_property>
+      <obj_property name="ObjectShortName">units[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/tens">
+      <obj_property name="ElementShortName">tens[3:0]</obj_property>
+      <obj_property name="ObjectShortName">tens[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/v">
+      <obj_property name="ElementShortName">v[7:0]</obj_property>
+      <obj_property name="ObjectShortName">v[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/d2/x">
       <obj_property name="ElementShortName">x[5:1]</obj_property>
       <obj_property name="ObjectShortName">x[5:1]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/curs">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/pix_ld_n">
+      <obj_property name="ElementShortName">pix_ld_n</obj_property>
+      <obj_property name="ObjectShortName">pix_ld_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/dot_rate">
+      <obj_property name="ElementShortName">dot_rate</obj_property>
+      <obj_property name="ObjectShortName">dot_rate</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/curs">
       <obj_property name="ElementShortName">curs</obj_property>
       <obj_property name="ObjectShortName">curs</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/write_n">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/write_n">
       <obj_property name="ElementShortName">write_n</obj_property>
       <obj_property name="ObjectShortName">write_n</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/cb">
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/line_phi">
+      <obj_property name="ElementShortName">line_phi</obj_property>
+      <obj_property name="ObjectShortName">line_phi</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/cb">
       <obj_property name="ElementShortName">cb[6:1]</obj_property>
       <obj_property name="ObjectShortName">cb[6:1]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/video_terminal_tb/co">
+   <wvobject type="array" fp_name="/video_terminal_tb/DUT/co">
       <obj_property name="ElementShortName">co[6:1]</obj_property>
       <obj_property name="ObjectShortName">co[6:1]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

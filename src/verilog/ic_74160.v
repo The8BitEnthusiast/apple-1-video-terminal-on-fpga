@@ -49,6 +49,10 @@ module ic_74160(
                     else
                         q <= q + 1;
     end
-            
+
+    initial
+    begin
+        q <= 0;
+    end
     
 endmodule

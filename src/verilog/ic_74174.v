@@ -40,5 +40,9 @@ module ic_74174(
             d_int <= d;
             
     end
-    
+
+    initial begin
+        d_int <= 6'b000000;
+    end
+
 endmodule

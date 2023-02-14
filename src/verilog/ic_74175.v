@@ -42,5 +42,9 @@ module ic_74175(
             d_int <= d;
             
     end
+
+    initial begin
+        d_int <= 4'b0000;
+    end
     
 endmodule
