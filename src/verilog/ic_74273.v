@@ -5,11 +5,11 @@
 // 
 // Create Date: 05/13/2022 10:56:50 AM
 // Design Name: 
-// Module Name: ic_74173
+// Module Name: ic_74273
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: Octal D Flip-Flop with Clear
 // 
 // Dependencies: 
 // 
@@ -17,37 +17,32 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 // Instantiation:
-//   ic_74173 u0 (.m(), .n(), .d(), .q(), .g1_n(), .g2_n(), .clr(), .clk());
+//   ic_74273 u0 (.d(), .q(), .mr_n(), .cp());
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ic_74173(
-    input m,
-    input n,
-    input [3:0] d,
-    output [3:0] q,
-    input g1_n,
-    input g2_n,
-    input clr,
-    input clk
+module ic_74273(
+    input [7:0] d,
+    output [7:0] q,
+    input mr_n,
+    input cp
     );
     
-    reg [3:0] d_int;
+    reg [7:0] d_int;
     
-    assign q = (~m & ~n) ? d_int : 4'bZZZZ;
+    assign q = d_int;
     
-    always @ (posedge clk, posedge clr) begin
-        if (clr)
-            d_int <= 4'b0000;
+    always @ (posedge cp, negedge mr_n) begin
+        if (~ mr_n)
+            d_int <= 8'b00000000;
         else
-            if ( ~g1_n & ~g2_n)
-                d_int <= d;
+            d_int <= d;
             
     end
 
     initial begin
-        d_int <= 4'b0000;
+        d_int <= 8'b00000000;
     end
     
 endmodule
