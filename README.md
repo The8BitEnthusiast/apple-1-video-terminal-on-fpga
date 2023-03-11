@@ -1,5 +1,7 @@
 # Apple 1 Video Terminal on FPGA
 
+![Splash](https://github.com/The8BitEnthusiast/apple-1-video-terminal-on-fpga/blob/main/graphics/splash.png?raw=true)
+
 This project was primarily aimed at studying and documenting the video terminal circuit used on the Apple 1. In order to learn as much as I could about its behavior, I re-implemented the terminal's functionality on an FGPA board with Verilog, simulating several scenarios I was interested in. To test the circuit and see it in action, I created a simple latch-based register to interface with Ben Eater's breadboard 8-bit computer, tapping into its data bus and output module's signals to send ASCII characters to the terminal for display.
 
 ## How the Video Terminal Works
@@ -10,12 +12,11 @@ During my research, I landed on this [article](https://www.sbprojects.net/projec
 
 The diagram below presents the original video terminal display's schematics with a color-coded overlay highlighting the function of each area of the design.
 
-
-![Main project image](https://github.com/The8BitEnthusiast/apple-1-video-terminal-on-fpga/blob/main/graphics/overview.png?raw=true)
+![Overview](https://github.com/The8BitEnthusiast/apple-1-video-terminal-on-fpga/blob/main/graphics/overview.png?raw=true)
 
 ### Clock Generation
 
-The video terminal uses a 14.31818 Mhz crystal and a series-resonant circuit to generate the main clock signal for the entire computer. The following four secondary clock lines are generated through frequency division techniques:
+The video terminal uses a 14.31818 Mhz crystal and a series-resonant circuit to generate the main clock signal not only for the video terminal, but also for the entire computer. The following four secondary clock lines are generated through frequency division techniques:
 
 1. DOT RATE: the pixel clock, running at half the main clock line (7.159 Mhz)
 2. CHAR RATE: the character clock, running at 1/7th the pixel clock to account for 5 pixels per character and 2 more for spacing
@@ -52,6 +53,8 @@ The NTSC specification calls for a total of 262 lines per field. A field is norm
 ### Video (Character) and Line (Row) Shift Registers
 
 The article linked in the Concept of Operations section does a very good job at describing the overall behaviour of the shift registers. The diagram below presents an alternate, expanded view that combines both the main video (character) shift register and the line (row) shift registers.
+
+![Shift Registers](https://github.com/The8BitEnthusiast/apple-1-video-terminal-on-fpga/blob/main/graphics/shift_registers.png?raw=true)
 
 As you can see in the view above, the circuit is built with two groups of shift registers:
 
