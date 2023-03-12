@@ -1,6 +1,6 @@
 # Apple 1 Video Terminal on FPGA
 
-![Splash](https://github.com/The8BitEnthusiast/apple-1-video-terminal-on-fpga/blob/main/graphics/splash.png?raw=true)
+![Splash](https://github.com/The8BitEnthusiast/apple-1-video-terminal-on-fpga/blob/main/graphics/splash.jpeg?raw=true)
 
 This project was primarily aimed at studying and documenting the video terminal circuit used on the Apple 1. In order to learn as much as I could about its behavior, I re-implemented the terminal's functionality on an FGPA board with Verilog, simulating several scenarios I was interested in. To test the circuit and see it in action, I created a simple latch-based register to interface with Ben Eater's breadboard 8-bit computer, tapping into its data bus and output module's signals to send ASCII characters to the terminal for display.
 
@@ -117,4 +117,8 @@ Another area of intervention was replacing the diode-based logic gates with thei
 
 ## 8-Bit CPU Interface
 
-To test this FPGA replica of the Apple 1 video terminal, I created a simple latch-based interface in Verilog that acts as a rudimentary version of the Apple 1's Peripheral Interface Adapter. The FPGA board exposes 7 inputs for an ASCII character, as well as the video terminal's DA input, which acts as 'character ready' signal. It is also the clock signal that triggers the latch. To interface with the 8-bit breadboard CPU, I connected all 7 character inputs to the bus, and then connected the DA input to the output display module's gated OI signal. So, to output a character to the video terminal, I basically just load the A register with the ASCII code of the character and then output it with the OUT instruction. 
+To test this FPGA replica of the Apple 1 video terminal, I created a simple latch-based interface in Verilog that acts as a rudimentary version of the Apple 1's Peripheral Interface Adapter. As shown in the schematics below, the FPGA board exposes 7 inputs for an ASCII character, as well as the video terminal's DA input, which acts as 'character ready' signal. It is also the clock signal that triggers the latch. To interface with the 8-bit breadboard CPU, I connected all 7 character inputs to the bus, and then connected the DA input to the output display module's gated OI signal. So, to output a character to the video terminal, I basically just load the A register with the ASCII code of the character and then output it with the OUT instruction. 
+
+![8 Bit Interface](https://github.com/The8BitEnthusiast/apple-1-video-terminal-on-fpga/blob/main/graphics/8-bit-interface.png?raw=true)
+
+
