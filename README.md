@@ -78,7 +78,7 @@ You may surprised to hear the line register will rotate its content and shift ou
 
 Cursor tracking is done by another Signetics 2504 shift register that rotates at the same cadence as the video shift register. It basically provides a 7th bit to each character. A value of logic zero indicates that the character currently being output by the video shift register is at the current cursor location. 
 
-When a character is written to the screen, logic '1' is inserted into the recirculated input to 'erase' the current cursor location, and on the next clock cycle, the ~WC2 signal is asserted to insert a logic '0' into the next location of the cursor shift register. This effectively moves the 'cursor location' to the next character location.
+When a new character is written to the video terminal via the peripheral interface adapter, logic '1' is inserted into the recirculated input to 'erase' the current cursor location, and on the next clock cycle, the ~WC2 signal is asserted to insert a logic '0' into the next location of the cursor shift register. This effectively moves the 'cursor location' to the next character location.
 
 ### Character Generation
 
@@ -116,3 +116,5 @@ The original Apple 1 video circuit used several MOS components (mostly the Signe
 Another area of intervention was replacing the diode-based logic gates with their digital equivalent.
 
 ## 8-Bit CPU Interface
+
+To test this FPGA replica of the Apple 1 video terminal, I created a simple latch-based interface in Verilog that acts as a rudimentary version of the Apple 1's Peripheral Interface Adapter. The FPGA board exposes 7 inputs for an ASCII character, as well as the video terminal's DA input, which acts as 'character ready' signal. It is also the clock signal that triggers the latch. To interface with the 8-bit breadboard CPU, I connected all 7 character inputs to the bus, and then connected the DA input to the output display module's gated OI signal. So, to output a character to the video terminal, I basically just load the A register with the ASCII code of the character and then output it with the OUT instruction. 
