@@ -6,6 +6,7 @@ verilog work ../src/verilog/ic_7404.v
 verilog work ../src/verilog/ic_74160.v
 verilog work ../src/verilog/ic_74166.v
 verilog work ../src/verilog/ic_74173.v
+verilog work ../src/verilog/ic_74273.v
 verilog work ../src/verilog/ic_74175.v
 verilog work ../src/verilog/nand_3.v
 verilog work ../src/verilog/or_3.v

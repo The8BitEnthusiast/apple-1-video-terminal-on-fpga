@@ -6,10 +6,10 @@
 // Create Date: 05/03/2022 05:14:17 PM
 // Design Name: 
 // Module Name: ic_2504
-// Project Name: 
+// Project Name: Apple 1 Video Display Terminal
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: A Verilog implementation of the Signetics 2504 Shift Register 
 // 
 // Dependencies: 
 // 
@@ -19,7 +19,6 @@
 // Instantation: ic_2504 u0 ( .clk(), .si(), .so() );
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 module ic_2504(
     input clk,
@@ -36,6 +35,7 @@ module ic_2504(
     
     assign so = tmp[1023];
 
+    // simulation initial state
     initial begin
         tmp <= 0;
     end
