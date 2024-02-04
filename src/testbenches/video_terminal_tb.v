@@ -28,8 +28,10 @@ module video_terminal_tb(
     reg da;
     reg clr_btn;
     wire rda_n;
+    wire vid1;
+    wire vid2;
     
-    video_terminal DUT (.clk_in(clk_in), .rd(rd), .da(da), .rda_n(rda_n), .clr_btn(clr_btn));
+    video_terminal DUT (.clk_in(clk_in), .rd(rd), .da(da), .rda_n(rda_n), .clr_btn(clr_btn), .vid1(vid1), .vid2(vid2));
 
     always #10 clk_in = ~clk_in;
     always @ (negedge rda_n)

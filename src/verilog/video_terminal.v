@@ -17,7 +17,8 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 // Instantiation:
-//  video_terminal u0 (.clk_in(), .rd(), .da(), .rda_n(), .clr_btn());
+//  video_terminal u0 (.clk_in(), .rd(), .da(), .rda_n(), .clr_btn(), .vid1,
+//  vid2);
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -27,7 +28,9 @@ module video_terminal(
     input [7:1] rd,
     input da,
     output rda_n,
-    input clr_btn
+    input clr_btn,
+    output vid1,
+    output vid2
     );
     
     wire clk_out, locked, clk;

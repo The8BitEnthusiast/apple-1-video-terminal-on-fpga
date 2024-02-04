@@ -5,17 +5,18 @@
    <db_ref_list>
       <db_ref path="video_terminal_tb_snapshot.wdb" id="1">
          <top_modules>
+            <top_module name="glbl" />
             <top_module name="video_terminal_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="67,445,735.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="67,448,475.001 ns"></ZoomEndTime>
-      <Cursor1Time time="67,448,395.000 ns"></Cursor1Time>
+      <ZoomStartTime time="27.202566824 ms"></ZoomStartTime>
+      <ZoomEndTime time="47.842566825 ms"></ZoomEndTime>
+      <Cursor1Time time="34.002566824 ms"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="108"></NameColumnWidth>
+      <NameColumnWidth column_width="104"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="30" />
@@ -84,6 +85,10 @@
       <obj_property name="ElementShortName">last_h</obj_property>
       <obj_property name="ObjectShortName">last_h</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/line_phi">
+      <obj_property name="ElementShortName">line_phi</obj_property>
+      <obj_property name="ObjectShortName">line_phi</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/video_terminal_tb/DUT/h_sync_n">
       <obj_property name="ElementShortName">h_sync_n</obj_property>
       <obj_property name="ObjectShortName">h_sync_n</obj_property>
@@ -115,7 +120,6 @@
    <wvobject type="array" fp_name="/video_terminal_tb/DUT/d2/x">
       <obj_property name="ElementShortName">x[5:1]</obj_property>
       <obj_property name="ObjectShortName">x[5:1]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/video_terminal_tb/DUT/pix_ld_n">
       <obj_property name="ElementShortName">pix_ld_n</obj_property>
@@ -133,10 +137,6 @@
       <obj_property name="ElementShortName">write_n</obj_property>
       <obj_property name="ObjectShortName">write_n</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/video_terminal_tb/DUT/line_phi">
-      <obj_property name="ElementShortName">line_phi</obj_property>
-      <obj_property name="ObjectShortName">line_phi</obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/video_terminal_tb/DUT/cb">
       <obj_property name="ElementShortName">cb[6:1]</obj_property>
       <obj_property name="ObjectShortName">cb[6:1]</obj_property>
@@ -144,6 +144,5 @@
    <wvobject type="array" fp_name="/video_terminal_tb/DUT/co">
       <obj_property name="ElementShortName">co[6:1]</obj_property>
       <obj_property name="ObjectShortName">co[6:1]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
