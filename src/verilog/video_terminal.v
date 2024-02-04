@@ -24,17 +24,21 @@
 
 
 module video_terminal(
-    input clk_in,
-    input [7:1] rd,
-    input da,
-    output rda_n,
+    input clk,
+    input [7:1] rd_in,
+    input da_in,
     input clr_btn,
     output vid1,
-    output vid2
+    output vid2,
+    output curs_tgl_in
     );
     
-    wire clk_out, locked, clk;
+    // wire clk_out, locked, clk;
     reg mr_n = 1'b1;
+
+    wire [7:1] rd;
+    wire da;
+    wire rda_n;
 
     wire [6:1] ci;
     wire [6:1] cb;
@@ -46,6 +50,7 @@ module video_terminal(
     wire char_rate, dot_rate;
     wire h10, last_h, last_h_n;
     wire hbl_n, h_sync_n, h3_vbl;
+    wire v_sync_n;
    
     wire [3:0] units;
     wire [3:0] tens;
@@ -56,14 +61,17 @@ module video_terminal(
     wire line_phi, mem_phi;
     wire pix_ld_n;
 
-    wire v3_nor_v4, v_cr, vid1_in, vid1, vid2;
+    wire v3_nor_v4, v_cr, vid1_in;
 
     wire line_7;
 
-    wire cursi, curso, curs2, curs_tgl_in, curs_tgl;
+    wire cursi, curso, curs2, curs_tgl;
     
-    clk_gen clk0 (.clk_in(clk_in), .clk_out(clk_out), .locked(locked));
-    assign clk = clk_out & locked;
+    // clk_gen clk0 (.clk_in(clk_in), .clk_out(clk_out), .locked(locked));
+    // assign clk = clk_out & locked;
+    ic_74273 reg0 (.d({1'b1, rd_in[7:1]}), 
+        .q({da, rd[7:1]}), .mr_n(rda_n), .cp(da_in));
+
 
     ic_74175 c13 (.cp(clk),
                  .d({curso, curs2, vid1_in, dot_rate}),
@@ -171,8 +179,8 @@ module video_terminal(
                   .mr_n (mr_n) );
     
     not D12F (last_h_n, last_h);
-    // or C9B (h_sync_n, d7.q[0], hbl_n);
-    // fix h_sync pulse width
+   //  or C9B (h_sync_n, d7.q[0], hbl_n );
+   // fix h_sync pulse width
     or C9B (h_sync_n, d7.q[0], hbl_n | ~(units < 5));
 
     assign hbl_n = d7.q[2];
@@ -219,7 +227,10 @@ module video_terminal(
     
     and_3 and3v_cr (v_cr, v[5], vbl, v3_nor_v4);
     nor c10d (v3_nor_v4, v[3], v[4]);
-    nand c15c (vid1_in, h_sync_n, d15.q[3]);
+    // nand c15c (vid1_in, h_sync_n, d15.q[3]);
+    // fix v_sync pulse width
+    assign v_sync_n = ~ (v == 8'he4);
+    nand c15c (vid1_in, h_sync_n, v_sync_n);
 
     ic_2504 c11b ( .clk(mem_phi), .si(cursi), .so(curso) );
 
