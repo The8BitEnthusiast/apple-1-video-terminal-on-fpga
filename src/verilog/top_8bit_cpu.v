@@ -20,8 +20,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module top(
-
+module top_8bit_cpu(
     input clk,
     input [7:1] rd,
     input da,
@@ -37,16 +36,21 @@ module top(
     wire locked;
     
     wire rda_n;
+    wire da_out;
     
     assign rda = ~rda_n;
 
     clk_gen clk0 (.clk_in(clk), .clk_out(clk_out), .locked(locked));
 
     assign clk_locked = clk_out & locked;
+    
+    // this register acts as the PIA for the 8-bit CPU
+    ic_74273 reg0 (.d({1'b1, rd[7:1]}), 
+        .q({da_out, 7'b0000000}), .mr_n(rda_n), .cp(da));
 
     video_terminal vt0 (.clk(clk_locked), 
         .rd(rd), 
-        .da(da), 
+        .da(da_out), 
         .clr_btn(clr_btn),
         .rda_n(rda_n), 
         .vid1(vid1), 

@@ -24,21 +24,25 @@
 
 
 module video_terminal(
+    
     input clk,
-    input [7:1] rd_in,
-    input da_in,
+    input [7:1] rd,
+    input da,
+    output rda_n,
     input clr_btn,
     output vid1,
     output vid2,
-    output curs_tgl_in
+    output heartbeat
     );
+    
+    
     
     // wire clk_out, locked, clk;
     reg mr_n = 1'b1;
 
-    wire [7:1] rd;
-    wire da;
-    wire rda_n;
+    // wire [7:1] rd;
+    // wire da;
+    // wire rda_n;
 
     wire [6:1] ci;
     wire [6:1] cb;
@@ -65,13 +69,12 @@ module video_terminal(
 
     wire line_7;
 
-    wire cursi, curso, curs2, curs_tgl;
+    wire cursi, curso, curs2, curs_tgl, curs_tgl_in;
+    
+    assign heartbeat = curs_tgl_in;
     
     // clk_gen clk0 (.clk_in(clk_in), .clk_out(clk_out), .locked(locked));
     // assign clk = clk_out & locked;
-    ic_74273 reg0 (.d({1'b1, rd_in[7:1]}), 
-        .q({da, rd[7:1]}), .mr_n(rda_n), .cp(da_in));
-
 
     ic_74175 c13 (.cp(clk),
                  .d({curso, curs2, vid1_in, dot_rate}),

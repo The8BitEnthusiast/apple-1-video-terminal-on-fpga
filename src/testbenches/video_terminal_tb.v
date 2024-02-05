@@ -26,11 +26,17 @@ module video_terminal_tb(
     reg clk;
     reg [7:1] rd;
     reg da;
+    wire rda;
+    wire rda_n;
     reg clr_btn;
     wire vid1;
     wire vid2;
+    wire heartbeat;
     
-    video_terminal DUT (.clk(clk), .rd_in(rd), .da_in(da), .clr_btn(clr_btn), .vid1(vid1), .vid2(vid2));
+    video_terminal DUT (.clk(clk), .rd(rd), .da(da), .rda_n(rda_n), .clr_btn(clr_btn),
+                 .vid1(vid1), .vid2(vid2), .heartbeat(heartbeat));
+                 
+    assign rda = ~rda_n;
 
     always #35 clk = ~clk;
      
@@ -44,10 +50,13 @@ module video_terminal_tb(
         #25000000 clr_btn <= 0;
         #2000000 rd <= 7'b1000001;
         #100 da<=1;
+        
+        @ (negedge rda_n);
+        #70 da<=0;
 
         
         // #50000000 $finish;
-        #6000000000 $finish;
+        // #6000000000 $finish;
     end
     
 endmodule
